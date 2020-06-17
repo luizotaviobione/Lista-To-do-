@@ -1,0 +1,82 @@
+*{
+	margin: 0; 
+	padding: 0;
+
+}
+
+body
+{
+	min-height: 100vh;
+	background: linear-gradient(to bottom right, #ccffff 0%, #0066ff 100%);
+	font-family: "Poppins", sans-serif;
+
+}
+header, form{
+	min-height: 20vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+
+.listaElementos{
+	
+	width: 50%;
+	margin: 0 auto;
+	list-style: none;
+}
+.estiloElementos{
+	padding: 8px;
+	font-size: 20px;
+	background: white;
+	margin-top: 5px;
+	height: 30px;
+
+}	
+.texto, .botao
+{
+	padding: 10px;
+	font-size: 20px;
+
+}
+.texto
+{
+	width: 30%;
+}
+
+.botao
+{
+	cursor: pointer;
+	background: linear-gradient(to bottom right, #ccffff 0%, #0066ff 100%);
+	outline: 0;
+}
+
+
+
+
+.lixeira
+{
+	float: right;
+	background: none;
+	cursor: pointer;
+	border: none;
+	font-size: 20px;
+	/*font-size: 40px;*/
+
+}
+
+.check
+{
+	float: right;
+	margin-right: 10px;
+	color: green;
+	background: none;
+	cursor: pointer;
+	border: none;
+	font-size: 20px;
+}
+
+.elementomarcado{
+	text-decoration: line-through;
+}
