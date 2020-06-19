@@ -3,6 +3,8 @@ var botao =  document.querySelector('.botao')
 var listaElementos = document.querySelector('.listaElementos')
 //console.log(listaElementos)
 var texto = document.querySelector('.texto')
+var x = 0;
+const filterOption = document.querySelector(".filter-todo")
 
 
 
@@ -40,6 +42,14 @@ botao.addEventListener("click",()=>{
 	/*evento de marcar o elemento*/
 	check.addEventListener("click",elementoMarcado)
 
+	if(x===0)
+	{
+		const teste2 = listaElementos.childNodes;
+		teste2[0].remove()
+		x++
+
+	}
+
 	
 
 
@@ -47,13 +57,21 @@ botao.addEventListener("click",()=>{
 
 })
 
+filterOption.addEventListener("click", filterTodo)
+
 
 /*funções*/
 
 function elementoEliminado(e){
 	botao = e.target.parentNode
 	elemento = botao.parentNode
-	elemento.parentNode.removeChild(elemento)
+	elemento.classList.add('elementoEliminado')
+	elemento.addEventListener("transitionend", function(){
+		elemento.remove()
+	})
+	//elemento.parentNode.removeChild(elemento)
+
+
 
 }
 
@@ -62,4 +80,38 @@ function elementoMarcado(e){
 	elemento = botao.parentNode
 	elemento.classList.add('elementomarcado')
 
+}
+
+function filterTodo(e){
+	const todos = listaElementos.childNodes;
+	
+	
+	todos.forEach(function(todo){
+		//console.log(e.target.value)
+		
+		switch(e.target.value){
+			case "All":
+				todo.style.display ="block"
+				break;
+			
+			case "Completed":
+				if(todo.classList.contains('elementomarcado')){
+					todo.style.display = 'block'
+				}else{
+					todo.style.display = 'none'
+				}
+				break;
+
+			case "Uncompleted":
+				if(!todo.classList.contains('elementomarcado')){
+						todo.style.display = 'block'
+				}else{
+					todo.style.display = 'none'
+				}
+				break;
+
+
+		}
+	})
+	
 }

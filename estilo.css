@@ -31,6 +31,8 @@ header, form{
 	font-size: 20px;
 	background: white;
 	margin-top: 5px;
+	transition: all 0.5s ease;
+
 	height: 30px;
 
 }	
@@ -50,6 +52,11 @@ header, form{
 	cursor: pointer;
 	background: linear-gradient(to bottom right, #ccffff 0%, #0066ff 100%);
 	outline: 0;
+	transition: background ease 0.5s;
+}
+
+.botao:hover{
+	background: linear-gradient(to bottom, #ffffff 0%, #0066ff 95%);
 }
 
 
@@ -63,6 +70,7 @@ header, form{
 	border: none;
 	font-size: 20px;
 	/*font-size: 40px;*/
+	outline: none;
 
 }
 
@@ -75,8 +83,56 @@ header, form{
 	cursor: pointer;
 	border: none;
 	font-size: 20px;
+	outline: none;
 }
 
 .elementomarcado{
 	text-decoration: line-through;
+	background: linear-gradient(to top right, #9999ff 0%, #ffffcc 95%);
+	opacity: 0.4;
+	
+}
+
+.elementoEliminado
+{
+	transform: translateY(8rem) rotateZ(20deg);
+	opacity: 0;
+}
+
+select{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance:none;
+	outline: none;
+	border: none;
+}
+
+.select
+{
+	margin: 1rem;
+	position: relative;
+	overflow: hidden;
+}
+
+select{
+	color: #0066ff;
+	width: 10rem;
+	cursor: pointer;
+	padding: 1rem;
+	background: white;
+}
+
+.select::after{
+	content:"\25BC";
+	position: absolute;
+	background: linear-gradient(to bottom right, #ccffff 0%, #0066ff 100%);
+	top: 0;
+	right:0;
+	padding: 1rem;
+	pointer-events: none;
+}
+
+.select:hover::after{
+	background: linear-gradient(to bottom, #ffffff 0%, #0066ff 95%);
+	
 }
